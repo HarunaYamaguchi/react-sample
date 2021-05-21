@@ -19,14 +19,14 @@ export default (state = initialState, action) => {
   // console.log(action.todo)
   switch(action.type){
     case ADDTODO:
-      console.log(action.todo)
-      let a = {
-        lists:[
-          ...state.lists, //スプレッド構文で展開する
-          action.todo //actionの中のtodoの内容を表示
-        ]
-      }
-      console.log(a)
+      // console.log(action.todo)
+      // let a = {
+      //   lists:[
+      //     ...state.lists, //スプレッド構文で展開する
+      //     action.todo //actionの中のtodoの内容を表示
+      //   ]
+      // }
+      // console.log(a)
       return {
         lists:[
           ...state.lists, 
@@ -44,29 +44,3 @@ export default (state = initialState, action) => {
   }
 }
 
-// const todos = (state = [], action) => {
-//   switch(action.type){
-//     case ADDTODO:
-//       // console.log(action.todo)
-//       // let a = {
-//       //   lists:[
-//       //     ...state.lists, 
-//       //     action.todo
-//       //   ]
-//       // }
-//        // console.log(a)
-//     return {
-//       lists:[
-//         ...state.lists, 
-//           action.todo
-//       ];
-//     case REMOVETODO:
-//       let b = [...state.lists]
-//         b.splice(action.index,1)
-//         return {
-//           lists: b
-//         }
-//     default:
-//       return state;
-//   }
-// };
