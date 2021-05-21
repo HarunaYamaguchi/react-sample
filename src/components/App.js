@@ -1,9 +1,7 @@
-
-import React,{ Component,useState,useEffect,useDispatch,useStore,useSelector } from 'react';
+import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 import { countPlus , countMinus } from '../actions';
 import { addTodo, removeTodo} from '../actions';
-// import propTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props){
@@ -32,6 +30,7 @@ class App extends React.Component {
   }
 }
 
+
 const mapStateToProps = state => ({ //描画のための値をstateから持ってくる
   val: state.counter.val,
   lists: state.todolist.lists
@@ -43,6 +42,7 @@ const mapDispatchToProps = dispatch =>({  //ユーザの動作があったとき
   addTodo:(task) => dispatch(addTodo(task)),
   removeTodo: (index) => dispatch(removeTodo(index))
 })
+
 
 export default connect (mapStateToProps, mapDispatchToProps)(App);
 // export default App;
